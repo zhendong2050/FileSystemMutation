@@ -69,7 +69,7 @@ int main()
 
 The hooking function "fopen" is sort of done (you also can add other functions that need to be instrumented in the instrumentor.py file). 
 
-Now the preHander does nothing but printing "handling the input file".  For file system mutation, you can play the fopen_handler function, e.g., mutating the file or replacing file with others before it is executed. Simply speaking, we can implement our idea in the prehandler function. Roughly, we have the following ToDos:   
+Now the preHander does nothing but printing "handling the input file".  For file system mutation, you can play the fopen_handler function, e.g., mutating the file or replacing file with others before it is executed. Roughly, we have the following ToDos:   
 
 * designing a structure to maintain the target file and its mutants 
 * monitoring the input being executed and selecting the corresponding file mutants
