@@ -65,7 +65,7 @@ int main()
 
   You find the prehandler is executed. The message "handling the input file: test.txt"! 
 
-##ToDo
+## ToDo
 
 The hooking function "fopen" is sort of done (you also can add other functions that need to be instrumented in the instrumentor.py file). 
 
