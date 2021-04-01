@@ -12,6 +12,7 @@ import ast_modifier
 from enum import Enum
 
 includes=''
+## pairs of a target function name and its handler name
 instrument_func_dict = {'fopen' : 'fopen_handler'}
 
 class FuncCallInstrumentor(ast_modifier.AstModifier):
@@ -29,7 +30,7 @@ class FuncCallInstrumentor(ast_modifier.AstModifier):
 
     def instrument(self, node):
         if node.name.name == 'fopen':
-            self.insert_node_before(c_ast.FuncCall(c_ast.ID(instrument_func_dict[node.name.name]), node.args))
+            self.insert_node_before(c_ast.FuncCall(c_ast.ID(instrument_func_dict[node.name.name]), c_ast.ExprList([node.args.exprs[0], node.args.exprs[1], c_ast.Constant('char*', '"'+str(node.name.coord)+'"')])),'Compound')
 
 
 def ast_file(ast):
