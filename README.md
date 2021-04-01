@@ -49,9 +49,9 @@ int main()
   * cd examples
   * python3 ../instrumentation/instrumentor/instrumentor.py example.c > example_inst.c
   
-  You will find the fopenHander has been instrumented in the source cde in file example_inst.c      
+  You will find the call site of function fopenHander has been instrumented in the source code of file example_inst.c      
 
-* Step 2: packing the prehander as a static library
+* Step 2: packing the prehander function as a static library
   * cd instrumentation
   * gcc -c codebean.c -o codebean.o
   * ar rcs libcodebean.a codebean.o
